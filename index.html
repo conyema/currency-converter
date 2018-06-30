@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="manifest" href="/manifest.json"> 
+
+</head>
+<body>
+
+<!-- converter app container-->
+  <div class="flex-container"> 
+    <header class="header">
+      <h1>Currency Converter</h1>
+    </header> 
+    
+    <div>  
+      <input class="input" id="inputCurrency" type="number" placeholder="enter amount" oninput="currencyConverter(this.value)" onchange="currencyConverter(this.value)">
+      <select class="select" aria-label="Currency Type"></select>
+    </div>
+    
+    <div>
+      <input class="" id="outputCurrency" type="number" placeholder="result" oninput="currencyConverter(this.value)" onchange="currencyConverter(this.value)">
+      <select class="select" aria-label="Currency Type"><option>ball</option></select>
+    </div> 
+    
+    <div>
+    <button class="button" onclick="">convert</button>
+    <label ></label>
+    <span class="label success">Success</span><span class="label success">Success</span>
+    </div>
+
+    <div><p class = "Statement">statement</p></div>
+      <!-- end converter container-->
+      
+    <footer class="footer">
+        <p>Copyright (c) 2018 Chinedum Onyema</p>
+    </footer> <!-- end footer --> 
+    </div>	<!-- end container-->
+
+  <script src="scripts/test.js"></script>
+
+</body>
+</html>
