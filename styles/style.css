@@ -5,11 +5,11 @@
     box-sizing: border-box; 
   }
   
-  body html {
+  body {
     padding: 10px;
     margin: auto;
     height: 80%;
-    width: 100%;
+    width: 90%;
     font-family: 'Helvetica', 'Verdana', 'sans-serif', 'Arial';
     font-weight: 800;
     font-display: optional;
