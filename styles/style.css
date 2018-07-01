@@ -46,7 +46,7 @@
   .header {
       
       padding: 1px;
-      background-color: #abacab;
+      background-color: rgb(53, 14, 14);
       text-align: center;
       -webkit-text-stroke: 2px black;
       height: 1%;
