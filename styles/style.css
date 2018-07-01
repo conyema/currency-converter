@@ -8,7 +8,7 @@
   body {
     padding: 10px;
     margin: auto;
-    height: 900%;
+    height: 100%;
     width: 100%;
     font-family: 'Helvetica', 'Verdana', 'sans-serif', 'Arial';
     font-weight: 800;
@@ -43,7 +43,6 @@
     }
 
   .header {
-      
       padding: 1px;
       background-color: rgb(53, 14, 14);
       text-align: center;
