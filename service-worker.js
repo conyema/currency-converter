@@ -1,4 +1,4 @@
-const staticCacheName = 'currency-converter-v5';
+const staticCacheName = 'currency-converter-v3';
 
 // Cache essential Wep App files
 const filesToCache = [
@@ -8,6 +8,8 @@ const filesToCache = [
   './scripts/idb.js',
   './styles/style.css',
   './manifest.json',
+  './images/icons/icon-192x192.jpg',
+  './images/icons/icon-256x256.jpg',
   './images/coinsm.png',
 ];
 
