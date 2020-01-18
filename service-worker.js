@@ -1,4 +1,4 @@
-const staticCacheName = 'currency-converter-v3';
+const staticCacheName = 'currency-converter-v6';
 
 // Cache essential Wep App files
 const filesToCache = [
@@ -7,49 +7,64 @@ const filesToCache = [
   './scripts/app.js',
   './scripts/idb.js',
   './styles/style.css',
-  './manifest.json',
-  './images/icons/icon-192x192.jpg',
-  './images/icons/icon-256x256.jpg',
-  './images/coinsm.png',
+  './images/icons/favicon-32x32.png',
+  './favicon.ico'
 ];
 
 // Install service worker and cache essential files
 self.addEventListener('install', event => {
-  console.log('ServiceWorker Installing');
+  // console.log('ServiceWorker Installing');
   event.waitUntil(
     caches.open(staticCacheName).then(cache => {
       console.log('ServiceWorker installed');
       return cache.addAll(filesToCache);
-    }).catch(error => console.log('failed to cache: ' + error))
+    })
+    .catch(error => console.log('failed to cache: ' + error))
   );
 });
-// Activate service worker
+
+// Activate service worker and delete old cache
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.filter(cacheName => {
-          return cacheName.startsWith('currency-converter-') &&
-                 !staticCacheName.includes(cacheName);
+          return cacheName.startsWith('currency-converter-') && cacheName !== staticCacheName;
+                //  !staticCacheName.includes(cacheName);
         }).map(cacheName => {
-          return caches.delete(cacheName);
           console.log(cacheName);
-          console.log('SW activated');
+          // console.log('SW activated');
+          return caches.delete(cacheName);
         })
       );
     })
   );
 });
 
+/**  Activate Service Worker immediately  **/
+self.skipWaiting();
+
 self.addEventListener('fetch', event => {
   let requestUrl = new URL(event.request.url);
 
-  if (requestUrl.origin === location.origin) {
-    if (requestUrl.pathname === '/') {
-      event.respondWith(caches.match('/index.html'));
-      return;
-    }
+  // if (requestUrl.origin === location.origin) {
+  //   if (requestUrl.pathname === './') {
+  //     event.respondWith(caches.match('./index.html'));
+  //     return;
+  //   }
+  // }
+
+  if (requestUrl.pathname === './') {
+    event.respondWith(caches.match('./index.html'));
+    return;
   }
+
+  // // if (requestUrl.port === '1337') {
+  if (requestUrl.host.includes('apilayer.net')) {
+    console.log('currency url');
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
@@ -57,10 +72,10 @@ self.addEventListener('fetch', event => {
   );
 });
 
-self.addEventListener('message', event => {
-  if (event.data.action === 'skipWaiting') {
-      self.skipWaiting();
-  }
-});
+// self.addEventListener('message', event => {
+//   if (event.data.action === 'skipWaiting') {
+//       self.skipWaiting();
+//   }
+// });
 
 

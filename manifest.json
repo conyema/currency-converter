@@ -1,17 +1,21 @@
 {
   "name": "Currency Converter",
   "short_name": "Converter",
-  "icons": [{
-      "src": "images/icons/icon-192x192.png",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#220022",
+  "background_color": "#FAEBD7",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "images/icons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
-    }, {
-      "src": "images/icons/icon-256x256.png",
-      "sizes": "256x256",
+    },
+    {
+      "src": "images/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
-    }],
-  "start_url": "/index.html",
-  "display": "standalone",
-  "background_color": "#A52A2A",
-  "scope": "./"
+    }
+  ]
 }

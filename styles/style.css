@@ -1,119 +1,192 @@
 /*
     CSS for Currency Converter
  */
+ @charset "utf-8";
+ 
+  /* html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  } */
+
  * {
     box-sizing: border-box; 
   }
   
+  body, html {
+    height: 100%;
+  }
+
   body {
+    font-family: monospace, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: #faebd7;
+    margin: 0;
+    background-color: #333;
+    /* font-weight: 800;
     padding: 10px;
     margin: auto;
-    height: 80%;
-    width: 90%;
-    font-family: 'Helvetica', 'Verdana', 'sans-serif', 'Arial';
-    font-weight: 800;
+    max-height: 100%;
+    color: #c0c0c0;
+    font: 16px/1.5 monospace, Verdana, sans-serif;
+    color: #88B04B;
+    max-width: 400px;
     font-display: optional;
-    background-color: #000000;
+    line-height: 1.5;
     color: rgb(254, 254, 255);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; 
+    -moz-osx-font-smoothing: grayscale;  */
   }
-    .flex-container {
-      margin: 0 auto;
-      overflow: hidden; 
-      flex-wrap: wrap;
-      flex-direction: column;  
-      font-size: 16px;  
-      width: 40%;
-      height: 60%;    
-      padding: 1%;
-      border: 5px solid rgb(255, 0, 0);
-    }
 
-    .flex-container > div {
-      flex-wrap: wrap;
-      flex-direction: column; 
-      padding: 1%;
-      margin: 5% 0;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      line-height: 20%;
-      border: 1px solid rgb(255, 0, 0)
-    }
+  .app-container {
+    height: 100vh;
+    min-height: 570px;
+    /* max-height: 590px; */
+  }
+  
+  .flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    /* padding: 0.5em; */
+    /* height: calc((100% - 90px)/7); */
+    /* margin: 0;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-around;
+    border: 1px solid #211;
+    text-align: center;
+    line-height: 20%; */
+  }
 
-  .header {
-      padding: 1px;
-      background-color: rgb(53, 14, 14);
-      text-align: center;
-      -webkit-text-stroke: 2px black;
-      height: 1%;
+  main, header, footer {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  header {
+      height: 18%;
+      font-variant: small-caps;
+      background-color: #202;
+      /* color: #fa0; */
+      color: #8f0;
+      border-radius: 5px 5px 0px 0px;
+      /* height: 1%;
+      min-height: 100px; 
+      border: 3px solid #211;
+      border: 1px solid #c0c0c0;
       width: 100%;
       clear: left;
-      background-image: url('../images/coinsm.png');
-    }	
-    
-  .flex-container>div:hover {
-    background-color: rgb(53, 14, 14);
+      background-image: url('../images/coinsm.png'); */
     }
   
-  .button {
-      background-color: rgb(250, 80, 1); 
-      color: rgb(255, 255, 255); 
-      border: 1px solid rgb(235, 0, 0);
-      padding: 2%;
-      text-align: center;
-      width: 50%;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 100%;
-      margin: 5%;
+  .logo {
+    margin: 0 10px;
+    background-color: #faebd7;
+  }
+
+  main {
+    overflow: hidden;
+    height: 69%;
+    /* height: 67%; */
+    background-color: #000;
+    border: 3px solid #202;
+    /* padding: 3%;
+    border: 5px solid rgb(255, 0, 0); */
+  }
+
+  .field {
+    min-height: 32px;
+    padding: 5px 0;
+  }
+      
+  .field:hover {
+    /* background-color:#411; */
+    background-color:#222;
+  }
+    
+  input, select {
+    width: 65%;
+    /* color: #fa0; */
+    color: #8f0;
+    background-color:#000;
+    font-family: monospace, Helvetica, sans-serif;
+    border: 1px solid #000;
+    padding: 0.8em;
+    text-align: center;
+    font-size: 1em;
+    cursor: pointer;
+    /* border: 1px solid #fa0;
+    border: 1px solid #211;
+    color: #faebd7;
+    margin: 4px 2px; */
+  }
+
+  button {
+      font-size: 1em;
+      width: 150px;
+      height: 48px;
+      /* color: #fa0; */
+      color: #8f0;
+      background-color: #202;
+      border-radius: 5px;
       -webkit-transition-duration: 0.4s; /* Safari */
       transition-duration: 0.4s;
       cursor: pointer;
+      /* border: 1px solid #4a4a4a;
+      color: #faebd7;
+      border: 1px solid #fa09; */
   }
   
   .button:hover {
-      background-color:  rgb(255, 0, 0);
-     
+      /* background-color: #8f5; */
+      background-color: #000;
+      font-size: 1.2rem;
+      color: #c0c0c0;
   }
-   p {
-    /* background-color: #4CAF50;  Green 
-    border: none;*/
-    width: 100%;
-    color: rgb(255, 255, 255);
-    background-color: inherit; 
-    line-height: 200%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-}
   
-  input, select {
-    /* background-color: #4CAF50;  Green 
-    border: none;*/
-    width: 70%;
-    color: rgb(255, 255, 255);
-    background-color: inherit; 
-    border: 1px solid rgb(0, 24, 240);
-    padding: 2%;
-    text-align: center;
-    text-decoration: none;
-    padding: 1%;
-    font-size: 100%;
-    display: inline-block;
-   /* margin: 4px 2px;*/
-    cursor: pointer;
-}
+  .info {
+    min-height: 90px;
+    /* border: 1px solid; */
+  }
 
-  .footer{
-    border: 3px solid rgb(255, 0, 0);
-    font-size: 1rem;
-    width: 100%;
-    clear: left;
-    height: 1%;
-    padding: 1px;
-    text-align: center;
-    background-color: rgb(53, 14, 14);
+  footer {
+    height: 13%;
+    /* min-height: 70px; */
+    border-radius: 0px 0px 5px 5px;
+    background-color: #202;
+  }
+
+  p {
+    padding: 0 5px;
+  }
+
+  a {
+    /* color: #fa0; */
+    color: #8f0;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #fff;
+    /* color: #faebd7;
+    color: #fa0; */
+  }
+
+  /*
+   *  Set page breakpoints 
+   */
+
+  @media screen and (min-width: 390px) {
+    body {
+      font-size: 19px;
+    }
   }
