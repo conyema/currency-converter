@@ -58,13 +58,17 @@ class CurrencyConverter {
   /* Get currencies from currencyLayer API or Inbdexed DB */
   getCurrrencies() {
     const accessKey = '4f43e92e9d68749f75c7cd58f101eae1';
-    const dataUrl = `http://apilayer.net/api/live?access_key=${accessKey}`;
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const nUrl = 'https://us.hidester.com/proxy.php?u=eJwBTACz%2F3M6Njg6ImzJtvsajLtIMTmTYyg6q3ZAuqZuR6nSXhN%2Bb6CoJYvrPnMfuuToUD%2F0yCZKk0OmaaIuZfzm6unpmAHZS%2FfwVIjNmI4LIjtOGSWf&b=7&f=norefer';
+    // const targetUrl = 'http://catfacts-api.appspot.com/api/facts?number=99'
+    const dataUrl = `https://cors-anywhere.herokuapp.com/http://apilayer.net/api/live?access_key=4f43e92e9d68749f75c7cd58f101eae1`;
     
     // return fetch('./data.json')
-    return fetch(dataUrl)
+    return fetch('https://nl.hideproxy.me/go.php?u=MRR79BiG%2BVpRpfosIdGhCtl0VjsaBBFNlG6Nrqk3ig1Atjuxx7vcpjdViId0H%2BWFCe1l22PlIAjQMXFRa5IRmCKiQXY%3D&b=4&f=norefer')
+    // return fetch('https://bit.ly/2v3nldp')
     .then(response => response.json())
     .then(data => {
-      // console.log(data);
+      console.log(data);
       this.storeCurrency(data);
       return data;
     })

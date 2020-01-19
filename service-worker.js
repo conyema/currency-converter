@@ -1,4 +1,4 @@
-const staticCacheName = 'currency-converter-v6';
+const staticCacheName = 'currency-converter-vldk';
 
 // Cache essential Wep App files
 const filesToCache = [
@@ -16,7 +16,7 @@ self.addEventListener('install', event => {
   // console.log('ServiceWorker Installing');
   event.waitUntil(
     caches.open(staticCacheName).then(cache => {
-      console.log('ServiceWorker installed');
+      // console.log('ServiceWorker installed');
       return cache.addAll(filesToCache);
     })
     .catch(error => console.log('failed to cache: ' + error))
@@ -32,8 +32,7 @@ self.addEventListener('activate', event => {
           return cacheName.startsWith('currency-converter-') && cacheName !== staticCacheName;
                 //  !staticCacheName.includes(cacheName);
         }).map(cacheName => {
-          console.log(cacheName);
-          // console.log('SW activated');
+          // console.log(cacheName);
           return caches.delete(cacheName);
         })
       );
@@ -59,9 +58,13 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  if (requestUrl.pathname === './data.json') {
+    return;
+  }
+
   // // if (requestUrl.port === '1337') {
   if (requestUrl.host.includes('apilayer.net')) {
-    console.log('currency url');
+    // console.log('currency url');
     return;
   }
 
