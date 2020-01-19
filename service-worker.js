@@ -1,4 +1,4 @@
-const staticCacheName = 'currency-converter-vldk';
+const staticCacheName = 'currency-converter-vlk';
 
 // Cache essential Wep App files
 const filesToCache = [
